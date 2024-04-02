@@ -1,4 +1,7 @@
-# React + TypeScript + Vite
+## Project in Development
+
+This project is built with React, TypeScript, Vite, and SASS. It is still in active development and may contain unfinished or experimental features.
+
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
