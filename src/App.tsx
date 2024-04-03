@@ -1,12 +1,16 @@
 import './App.scss';
 import Header from './components/common/header/Header';
+import NewTimer from './components/newTimer/NewTimer';
 
 function App() {
 
   return (
-    <main>
+    <>
       <Header />
-    </main>
+      <main>
+        <NewTimer />
+      </main>
+    </>
   )
 }
 
