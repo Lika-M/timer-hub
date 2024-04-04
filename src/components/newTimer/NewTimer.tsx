@@ -2,8 +2,8 @@ import Form from "../common/form/Form";
 import Input from "../common/input/Input";
 import Button from "../common/button/Button";
 
-type ExtractedData = {
-    name:string;
+export type ExtractedData = {
+    name: string;
     duration: number;
 }
 
