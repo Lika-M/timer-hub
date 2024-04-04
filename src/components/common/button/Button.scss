@@ -1,13 +1,13 @@
 @import '../../../styles/main.scss';
 
 .button {
-    width: 200px;
+    width: 180px;
     border: 0;
     background-color: $btn-bgr-color;
     box-shadow: 2px 5px 0 $btn-shadow-color;
     color: $color-white;
     border-radius: 3px;
-    font-size: 18px;
+    font-size: $fs-small;
     margin: 0;
     padding: 12px 20px;
     cursor: pointer;

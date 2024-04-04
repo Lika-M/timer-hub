@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Handjet:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&family=Handjet:wght@400;700&display=swap');
+
+$fs-big: 2em;
+$fs-mid: 1.5rem;
+$fs-small: 1.25rem;
+$fs-smaller: 0.85rem;
+
 $color-bgr: linear-gradient(#c8d8d7, #979e9d);
 $color-dashboard: linear-gradient(#35535b, #294a52);
+$color-bgr-timer: linear-gradient(#46585d, #223338);
 $color-white: #fff;
+$color-lite-blue: #9fc3cd;
+$color-mid-blue: #76bbcf;
 
 $btn-bgr-color: #338196;
 $btn-shadow-color: #217086;
@@ -17,4 +28,17 @@ $box-shadow: 1px 1px 5px rgb(95 90 90 / 30%);
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+@mixin component-layout {
+    margin: 10px;
+    padding: 40px;
+    border: 2px solid $color-white;
+    border-radius: 6px;
+}
+
+@mixin header($fs) {
+    font-size: $fs;
+    text-align: center;
+    margin: 0;
 }

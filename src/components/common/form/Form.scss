@@ -1,8 +1,5 @@
 @import '../../../styles/main.scss';
 
 .add-form {
-    margin: 10px;
-    padding: 40px;
-    border: 2px solid $color-white;
-    border-radius: 6px;
+   @include component-layout;
 }

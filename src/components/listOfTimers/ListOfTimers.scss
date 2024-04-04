@@ -1,0 +1,30 @@
+@import '../../styles/main.scss';
+
+.timers-list {
+    background-color: $btn-bgr-color;
+    list-style: none;
+    font-family: 'Handjet', sans-serif;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 10rem));
+
+    @include component-layout;
+
+    li {
+        background: $color-bgr-timer;
+        color: $color-mid-blue;
+        box-shadow: $box-shadow;
+        padding: 1rem;
+        border-radius: 6px;
+    }
+
+    p {
+        text-align: center;
+        font-size: $fs-small;
+        color: $color-mid-blue;
+    }
+}
+
+.no-timers {
+    @include header(2em)
+}
