@@ -1,3 +1,4 @@
+import useTimerContext from "../../store/useTimerContext";
 import Form from "../common/form/Form";
 import Input from "../common/input/Input";
 import Button from "../common/button/Button";
@@ -9,9 +10,12 @@ export type ExtractedData = {
 
 export default function NewTimer() {
 
+    const { addTimer } = useTimerContext();
+
     function handleSubmit(data: unknown) {
         const extractedData = data as ExtractedData;
         console.log(extractedData);
+        addTimer({name: extractedData.name, duration:Number(extractedData.duration)})
     }
 
     return (

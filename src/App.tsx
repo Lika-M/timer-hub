@@ -1,5 +1,5 @@
 import Header from './components/common/header/Header';
-import Timers from './components/listOfTimers/ListOfTimers';
+import ListOfTimers from './components/listOfTimers/ListOfTimers';
 import NewTimer from './components/newTimer/NewTimer';
 import TimersContextProvider from './store/timerContext';
 import './App.scss';
@@ -11,7 +11,7 @@ function App() {
       <Header />
       <main>
         <NewTimer />
-        <Timers />
+        <ListOfTimers />
       </main>
     </TimersContextProvider>
   )

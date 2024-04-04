@@ -1,7 +1,10 @@
-export default function SingleTimer() {
+import { type ExtractedData as TimerProps } from "../newTimer/NewTimer";
+
+export default function SingleTimer({name, duration}: TimerProps) {
     return (
         <article>
-            <h2>TODO: TIMER NAME</h2>
+            <h2>{name}</h2>
+            <p>{duration}</p>
         </article>
     );
 }
