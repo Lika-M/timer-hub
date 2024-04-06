@@ -7,7 +7,7 @@
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 10rem));
-
+    border: 2px solid $color-white;
     @include component-layout;
 
     li {
@@ -21,7 +21,14 @@
     p {
         text-align: center;
         font-size: $fs-small;
-        color: $color-mid-blue;
+        color: $color-white;
+        margin: 5px;
+    }
+
+    h2 {
+        font-size: $fs-big;
+        text-align: center;
+        margin: 0;
     }
 }
 

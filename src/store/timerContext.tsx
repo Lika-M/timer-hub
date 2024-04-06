@@ -18,7 +18,7 @@ export const TimerContext = createContext<ContextDataStorage | null>(null);
 
 // configure store 
 const initialState: TimersState = {
-    isRunning: false,
+    isRunning: true,
     timers: [],
 };
 
