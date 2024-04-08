@@ -10,8 +10,8 @@ export default function ListOfTimers() {
       {timers.length
         ? <ul className="timers-list">
           {timers.map(t => {
-            return (<li key={t.name}>
-              <SingleTimer {...t} />
+            return (<li key={t.id}>
+              <SingleTimer {...t}/>
             </li>)
           })}
         </ul>

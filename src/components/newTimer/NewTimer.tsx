@@ -4,6 +4,7 @@ import Input from "../common/input/Input";
 import Button from "../common/button/Button";
 
 export type ExtractedData = {
+    id:number;
     name: string;
     duration: number;
 }
@@ -14,8 +15,12 @@ export default function NewTimer() {
 
     function handleSubmit(data: unknown) {
         const extractedData = data as ExtractedData;
-        console.log(extractedData);
-        addTimer({name: extractedData.name, duration:Number(extractedData.duration)})
+        const id = Math.floor(Math.random() * 1000);
+        const canAdd = extractedData.name !== "" && extractedData.duration > 0;
+     
+        if (canAdd) {
+            addTimer({id: id, name: extractedData.name, duration: Number(extractedData.duration) })
+        }
     }
 
     return (
