@@ -2,8 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { type ExtractedData as TimerProps } from "../newTimer/NewTimer";
 import useTimerContext from "../../store/useTimerContext";
 
-
-export default function SingleTimer({ name, duration }: TimerProps) {
+export default function SingleTimer({ id, name, duration }: TimerProps) {
     const hours = Number(duration.split(':')[0]);
     const minutes = Number(duration.split(':')[1]);
     const durationInMinutes = (hours * 60 + minutes) * 1000;
@@ -11,7 +10,7 @@ export default function SingleTimer({ name, duration }: TimerProps) {
     const [time, setTime] = useState(durationInMinutes);
     const interval = useRef<number | null>(null);
 
-    const { isRunning } = useTimerContext();
+    const { isRunning, deleteTimer } = useTimerContext();
 
     useEffect(() => {
         let timer: number;
@@ -45,11 +44,16 @@ export default function SingleTimer({ name, duration }: TimerProps) {
     }
 
     function reset() {
-        setTime(durationInMinutes)
+        setTime(durationInMinutes);
+    }
+
+    function deleteTimerById() {
+        deleteTimer({ id: id, name: name, duration: duration });
     }
 
     return (
         <article>
+            <button onClick={deleteTimerById}>X</button>
             <h2>{time ? `${name}` : `${name} finished`}</h2>
             <p><progress max={durationInMinutes} value={time} /></p>
             <p><span>{`${remainingHours}:${remainingMin}`}</span><span onClick={reset}>reset</span></p>

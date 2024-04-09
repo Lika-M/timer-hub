@@ -10,6 +10,7 @@ type TimersStateManipulators = {
     addTimer: (data: Timer) => void;
     startTimers: () => void;
     stopTimers: () => void;
+    deleteTimer:(data: Timer) => void;
 }
 
 type ContextDataStorage = TimersState & TimersStateManipulators;
@@ -36,7 +37,12 @@ type StartTimersAction = {
     type: 'START_TIMERS';
 }
 
-type Action = AddTimerAction | StopTimersAction | StartTimersAction;
+type DeleteTimer = {
+    type: 'DELETE_TIMER';
+    payload: Timer;
+}
+
+type Action = AddTimerAction | StopTimersAction | StartTimersAction | DeleteTimer;
 
 function timersReducer(state: TimersState, action: Action): TimersState {
 
@@ -61,6 +67,13 @@ function timersReducer(state: TimersState, action: Action): TimersState {
         }
     }
 
+    if(action.type === 'DELETE_TIMER') {
+        return {
+            ...state,
+            timers: state.timers.filter(x => x.id !== action.payload.id)   
+        }
+    }
+
     return state;
 }
 
@@ -73,14 +86,18 @@ const TimersContextProvider: FC<{ children: ReactNode }> = ({ children }) => {
         timers: state.timers,
 
         addTimer(timer) {
-            dispatch({ type: 'ADD_TIMER', payload: timer })
+            dispatch({ type: 'ADD_TIMER', payload: timer });
         },
         startTimers() {
-            dispatch({ type: 'START_TIMERS' })
+            dispatch({ type: 'START_TIMERS' });
         },
         stopTimers() {
-            dispatch({ type: 'STOP_TIMERS' })
+            dispatch({ type: 'STOP_TIMERS' });
         },
+        deleteTimer(timer) {
+            dispatch({ type: 'DELETE_TIMER', payload: timer });
+        }
+    
     }
     return (
         <TimerContext.Provider value={ctx}>
