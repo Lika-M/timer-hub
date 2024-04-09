@@ -23,6 +23,16 @@
         font-size: $fs-small;
         color: $color-white;
         margin: 5px;
+
+        span:nth-child(2) {
+            margin-left: 15px;
+            cursor: pointer;
+            color:$color-mid-blue;
+
+            &:hover {
+                color: $color-white;
+            }
+        }
     }
 
     h2 {

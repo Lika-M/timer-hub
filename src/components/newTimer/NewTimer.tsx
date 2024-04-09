@@ -6,7 +6,7 @@ import Button from "../common/button/Button";
 export type ExtractedData = {
     id:number;
     name: string;
-    duration: number;
+    duration: string;
 }
 
 export default function NewTimer() {
@@ -16,10 +16,10 @@ export default function NewTimer() {
     function handleSubmit(data: unknown) {
         const extractedData = data as ExtractedData;
         const id = Math.floor(Math.random() * 1000);
-        const canAdd = extractedData.name !== "" && extractedData.duration > 0;
-     
+        const canAdd = extractedData.name !== "" && extractedData.duration !== "";
+        
         if (canAdd) {
-            addTimer({id: id, name: extractedData.name, duration: Number(extractedData.duration) })
+            addTimer({id: id, name: extractedData.name, duration: extractedData.duration })
         }
     }
 
@@ -32,10 +32,10 @@ export default function NewTimer() {
                 placeholder="Yoga"
             />
             <Input
-                type="number"
+                type="time"
+                min="00:00" max="12:00" step="300"
                 id="duration"
                 label="Enter the Duration"
-                placeholder="40"
             />
             <Button>Add New Timer</Button>
         </Form>
