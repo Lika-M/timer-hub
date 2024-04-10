@@ -39,7 +39,7 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
     const remainingSeconds = (time % 60).toString().padStart(2, '0');
 
     function reset() {
-        setTime(durationInSeconds); // Връщаме времето на началната стойност в секунди
+        setTime(durationInSeconds); 
     }
 
     function deleteTimerById() {
@@ -48,10 +48,10 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
 
     return (
         <article>
-            <button onClick={deleteTimerById}>X</button>
             <h2>{time ? `${name}` : `${name} finished`}</h2>
             <p><progress max={durationInSeconds} value={time} /></p>
-            <p><span>{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</span><span onClick={reset}>reset</span></p>
+            <p>{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</p>
+            <p><span onClick={reset}>Reset</span><span onClick={deleteTimerById}>Delete</span></p>
         </article>
     );
 }

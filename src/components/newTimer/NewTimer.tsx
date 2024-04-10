@@ -33,13 +33,13 @@ export default function NewTimer() {
             let newDuration = placeholder.duration;
 
             if (extractedData.name === '') {
-                newName = 'All fields are required!';
+                newName = 'Enter the Name';
             }
             if ( !isValidDurationFormat){
-                newDuration = 'Invalid format.'
+                newDuration = 'Invalid format'
             }
             if (extractedData.duration === '') {
-                newDuration = 'All fields are required!';
+                newDuration = 'Enter the Duration';
             }
 
             setPlaceholder({ name: newName, duration: newDuration });
@@ -51,14 +51,14 @@ export default function NewTimer() {
             <Input
                 type="text"
                 id="name"
-                label="Enter the Name"
+                label="Name"
                 placeholder={placeholder.name}
                 onBlur={() => setPlaceholder(initPlaceholder)}
             />
             <Input
                 type="text"
                 id="duration"
-                label="Enter the Duration"
+                label="Duration"
                 placeholder={placeholder.duration}
                 onBlur={() => setPlaceholder(initPlaceholder)}
             />

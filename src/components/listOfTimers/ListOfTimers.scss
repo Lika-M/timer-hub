@@ -1,13 +1,14 @@
 @import '../../styles/main.scss';
 
 .timers-list {
+    font-family: $font-second;
     background-color: $btn-bgr-color;
     list-style: none;
-    font-family: 'Handjet', sans-serif;
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(18rem, 10rem));
     border: 2px solid $color-white;
+    justify-content: space-around;
     @include component-layout;
 
     li {
@@ -20,28 +21,36 @@
 
     p {
         text-align: center;
-        font-size: $fs-small;
         color: $color-white;
-        margin: 5px;
+        margin:0;
+        font-size: $fs-small;
+    }
 
-        span:nth-child(2) {
-            margin-left: 15px;
-            cursor: pointer;
-            color:$color-mid-blue;
+    p:nth-child(3) {
+        font-size: $fs-mid;
+    }
 
-            &:hover {
-                color: $color-white;
-            }
+    p:nth-child(4) {
+        color: $color-mid-blue;
+        font-family: $font-first;
+        font-size: $fs-smaller;
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+
+        span:hover {
+            color: $color-white;
+            transform: scale(1.1);
         }
     }
 
     h2 {
-        font-size: $fs-big;
-        text-align: center;
-        margin: 0;
+        @include header($fs-mid);
+        font-family: $font-first;
     }
 }
 
 .no-timers {
+    flex-basis: 70%;
     @include header(2em)
 }
