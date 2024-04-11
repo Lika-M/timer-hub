@@ -11,14 +11,55 @@ body {
   background: $color-bgr;
   min-height: 100vh;
   font-family: 'Quicksand', sans-serif;
+  min-height: 100vh;
 }
 
 #root {
-  max-width: 50rem;
-  margin: 2rem auto;
+  width: 80%;
+  margin: 50px auto;
   padding: 2rem;
   background: $color-dashboard;
   border-radius: 8px;
   box-shadow: $box-shadow;
   color: $color-white;
+}
+
+.timers {
+  width: 80%;
+  margin: 50px auto;
+  padding: 2rem;
+  background: $color-dashboard;
+  border-radius: 8px;
+  box-shadow: $box-shadow;
+  color: $color-white;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 2em;
+}
+
+
+@media screen and (max-width: 1000px) {
+  main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  main {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background: $color-dashboard;
+  }
+
+  #root {
+    padding: 0;
+    width: 90%;
+  }
 }

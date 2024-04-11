@@ -1,6 +1,23 @@
 @import '../../../styles/main.scss';
 
 .add-form {
-   width: 60%;
-   @include component-layout;
+   padding: 40px;
+
+   .button {
+      margin: 20px auto;
+   }
+}
+
+@media screen and (max-width: 800px){
+   .add-form {
+      width: 60%;
+      margin: 0 auto;
+      padding: 20px;
+   }
+}
+
+@media screen and (max-width: 600px){
+   .add-form {
+      width: 80%;
+   }
 }
