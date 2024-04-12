@@ -66,10 +66,12 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
             <p><progress max={durationInSeconds} value={time} /></p>
             <p>{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</p>
             <p className="timer-btn">
-                <span onClick={reset}>Reset</span>
-                <span onClick={deleteTimerById}>Delete</span>
-                <span onClick={startTimer}>Start</span>
-                <span onClick={stopTimer}>Stop</span>
+                <button onClick={reset}>Reset</button>
+                <button
+                    className={isActive ? 'stop' : 'start'}
+                    onClick={isActive ? stopTimer : startTimer}>{isActive ? ' Stop' : 'Start'}
+                </button>
+                <button onClick={deleteTimerById}>Delete</button>
             </p>
             <p className="timer-btn">
             </p>

@@ -1,24 +1,11 @@
 @import '../../../styles/main.scss';
 
 .button {
-    display: inline-block;
-    border: 0;
+    @include button ($btn-bgr-color-hover,  rgb(145, 182, 249));
     background-color: $btn-bgr-color;
-    box-shadow: inset 0 1px 2px $btn-shadow-color;
     color: $color-white;
-    border-radius: 3px;
     font-size: $fs-small;
     margin: 0;
     padding: 12px 20px;
-    cursor: pointer;
-    transition: all .1s linear;
-
-    &:hover {
-        background-color: $btn-bgr-color-hover;
-    }
-
-    &:active {
-        box-shadow: 0px 0px 0 $btn-shadow-color-hover;
-        transform: translateY(3px);
-    }
+    cursor: pointer; 
 }

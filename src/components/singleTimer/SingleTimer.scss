@@ -29,6 +29,36 @@
             color: $color-white;
             margin: 0;
             text-align: center;
+
+            progress[value] {
+                --color: linear-gradient(#fff8,#fff0),
+                repeating-linear-gradient(135deg,#0003 0 10px,#0000 0 20px),#519813;
+                --background: #FFF;
+
+                display: inline-block;
+                height: 8px;
+                border-radius: 50%;
+                background: var(--background);
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                appearance: none;
+                border: none;
+
+                &::-webkit-progress-bar {
+                    border-radius: 10em;
+                    background: var(--background);
+                }
+
+                &::-webkit-progress-value {
+                    border-radius: 10em;
+                    background: var(--color);
+                }
+
+                &::-moz-progress-bar {
+                    border-radius: 10em;
+                    background: var(--color);
+                }
+            }
         }
 
         p:nth-child(2) {
@@ -40,18 +70,36 @@
         }
 
         .timer-btn {
-            color: $color-mid-blue;
-            font-family: $font-first;
-            font-size: $fs-smaller;
-            display: flex;
-            justify-content: space-between;
-            cursor: pointer;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 1px;
 
-            span:hover {
+            button {
+                background-color: $btn-bgr-color;
                 color: $color-white;
-                transform: scale(1.1);
+                font-family: $font-first;
+                font-size: $fs-smaller;
+                cursor: pointer;
+                width: 50px;
+                padding: 4px;
+
+                @include button($btn-bgr-color-hover, $color-white);
+
+                // &:hover {
+                //     padding: 1px;
+                //     transform: scale(1.1);
+                // }
+
+                &.stop {
+                    background-color: #B82003;
+                }
+
+                &.start {
+                    background-color:#519813;
+                }
             }
         }
+
 
     }
 }
@@ -84,7 +132,7 @@
         grid-template-columns: 1fr;
         width: 80%;
         margin: 0 auto;
-        
+
         li article {
             h2 {
                 @include header($fs-smallest);
