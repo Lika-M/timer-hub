@@ -1,7 +1,7 @@
 @import '../../../styles/main.scss';
 
 .add-form {
-   padding: 40px;
+   padding: 40px 10px;
    display: flex;
    flex-direction: column;
 
@@ -10,7 +10,7 @@
    }
 }
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 800px) {
    .add-form {
       width: 60%;
       margin: 0 auto;
@@ -18,8 +18,14 @@
    }
 }
 
-@media screen and (max-width: 600px){
+@media screen and (max-width: 600px) {
    .add-form {
       width: 80%;
+   }
+}
+
+@media screen and (max-width: 500px) {
+   .add-form {
+      padding: 0;
    }
 }

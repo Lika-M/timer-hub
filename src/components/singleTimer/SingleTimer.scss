@@ -1,53 +1,102 @@
 @import '../../styles/main.scss';
 
-.timers-list {
+.timers-wrapper {
 
     li {
+        width: 200px;
+        height: 150px;
         background: $color-bgr-timer;
         color: $color-mid-blue;
         box-shadow: $box-shadow;
         border-radius: 6px;
 
-        article {
-            display: grid;
-            grid-template-rows: 2fr 1fr 1fr 1fr;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
+        display: grid;
+        grid-template-rows: 2fr 1fr 1fr 1fr;
+        align-content: center;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin: auto;
 
+
+        h2 {
+            @include header($fs-mid);
+            font-family: $font-first;
+        }
+
+        p {
+            font-size: $fs-small;
+            color: $color-white;
+            margin: 0;
+            text-align: center;
+        }
+
+        p:nth-child(2) {
+            font-size: $fs-small;
+        }
+
+        p:nth-child(3) {
+            font-size: $fs-mid;
+        }
+
+        .timer-btn {
+            color: $color-mid-blue;
+            font-family: $font-first;
+            font-size: $fs-smaller;
+            display: flex;
+            justify-content: space-between;
+            cursor: pointer;
+
+            span:hover {
+                color: $color-white;
+                transform: scale(1.1);
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .timers-wrapper .timers-list {
+        grid-template-columns: repeat(2, 1fr);
+
+        li article {
             h2 {
-                @include header($fs-mid);
-                font-family: $font-first;
+                @include header($fs-small);
             }
 
-            p {
+            p,
+            p:nth-child(3) {
+                font-size: $fs-smaller;
+            }
+
+            p:nth-child(2),
+            p:nth-child(4) {
                 font-size: $fs-small;
-                color: $color-white;
-                margin: 0;
-                text-align: center;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    .timers-wrapper .timers-list {
+        grid-template-columns: 1fr;
+        width: 80%;
+        margin: 0 auto;
+        
+        li article {
+            h2 {
+                @include header($fs-smallest);
+            }
+
+            p,
+            p:nth-child(3) {
+                font-size: $fs-smallest;
             }
 
             p:nth-child(2) {
-                font-size: $fs-small;
-            }
-
-            p:nth-child(3) {
-                font-size: $fs-mid;
-            }
-
-            .timer-btn {
-                color: $color-mid-blue;
-                font-family: $font-first;
-                font-size: $fs-smaller;
-                display: flex;
-                justify-content: space-between;
-                cursor: pointer;
-
-                span:hover {
-                    color: $color-white;
-                    transform: scale(1.1);
-                }
+                font-size: $fs-smallest;
             }
         }
     }

@@ -61,7 +61,7 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
     }
 
     return (
-        <article>
+        <>
             <h2>{time ? `${name}` : `${name} finished`}</h2>
             <p><progress max={durationInSeconds} value={time} /></p>
             <p>{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</p>
@@ -73,6 +73,6 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
             </p>
             <p className="timer-btn">
             </p>
-        </article>
+        </>
     );
 }

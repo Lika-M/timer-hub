@@ -15,17 +15,7 @@ body {
 }
 
 #root {
-  width: 80%;
-  margin: 50px auto;
-  padding: 2rem;
-  background: $color-dashboard;
-  border-radius: 8px;
-  box-shadow: $box-shadow;
-  color: $color-white;
-}
-
-.timers {
-  width: 80%;
+  width: 60rem;
   margin: 50px auto;
   padding: 2rem;
   background: $color-dashboard;
@@ -36,10 +26,9 @@ body {
 
 main {
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 2fr 3fr;
   grid-gap: 2em;
 }
-
 
 @media screen and (max-width: 1000px) {
   main {
