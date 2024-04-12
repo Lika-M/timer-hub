@@ -2,9 +2,11 @@
 
 .add-form {
    padding: 40px;
+   display: flex;
+   flex-direction: column;
 
    .button {
-      margin: 20px auto;
+      margin-top: 20px;
    }
 }
 

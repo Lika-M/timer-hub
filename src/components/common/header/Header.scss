@@ -1,7 +1,6 @@
 @import '../../../styles/main.scss';
 
 .header {
-    @include grid-layout;
 
     h1 {
         text-align: center;

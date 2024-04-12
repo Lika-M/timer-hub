@@ -15,58 +15,21 @@
     border-radius: 6px;
     padding: 20px;
     margin: 0;
+}
 
-    li {
-        background: $color-bgr-timer;
-        color: $color-mid-blue;
-        box-shadow: $box-shadow;
-        border-radius: 6px;
+.timers-buttons {
+    padding: 0 20px;
+    margin: 25px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2%;
 
-        article {
-            display: grid;
-            grid-template-rows: 2fr 1fr 1fr 1fr;
-            align-content: center;
-            justify-content: center;
-            align-items: center;
-            padding: 5px;
-
-            h2 {
-                @include header($fs-mid);
-                font-family: $font-first;
-            }
-
-            p {
-                font-size: $fs-small;
-                color: $color-white;
-                margin: 0;
-                text-align: center;
-            }
-
-            p:nth-child(2) {
-                font-size: $fs-small;
-            }
-
-            p:nth-child(3) {
-                font-size: $fs-mid;
-            }
-
-            .timer-btn {
-                color: $color-mid-blue;
-                font-family: $font-first;
-                font-size: $fs-smaller;
-                display: flex;
-                justify-content: space-between;
-                cursor: pointer;
-
-                span:hover {
-                    color: $color-white;
-                    transform: scale(1.1);
-                }
-            }
-        }
+    button[disabled] {
+        background-color: $btn-shadow-color;
+        color:$btn-bgr-color-hover;
+        transform: unset;
+        box-shadow: unset;
     }
-
-
 }
 
 .no-timers {

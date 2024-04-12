@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { type ExtractedData as TimerProps } from "../newTimer/NewTimer";
 import useTimerContext from "../../store/useTimerContext";
+import './SingleTimer.scss';
 
 export default function SingleTimer({ id, name, duration }: TimerProps) {
 
@@ -29,8 +30,6 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
             interval.current = timer;
 
         } else if (interval.current && (!isRunning || !isActive)) {
-            console.log(isActive)
-            console.log(isRunning)
             clearInterval(interval.current);
         }
 
