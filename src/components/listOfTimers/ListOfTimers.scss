@@ -24,10 +24,8 @@
     grid-gap: 2%;
 
     button[disabled] {
-        background-color: $btn-shadow-color;
-        color:$btn-bgr-color-hover;
+        opacity: 0.5;
         transform: unset;
-        box-shadow: unset;
     }
 }
 
@@ -39,6 +37,7 @@
     .timers-wrapper {
         margin: 0 auto;
     }
+
     .timers-list {
         grid-template-columns: 1fr;
         justify-items: center;
@@ -50,4 +49,3 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
-

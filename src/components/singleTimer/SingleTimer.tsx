@@ -66,16 +66,23 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
             <h2>{time ? `${name}` : `${name} finished`}</h2>
             <p><progress max={durationInSeconds} value={time} /></p>
             <p>{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</p>
-            <p className="timer-btn">
-                <button onClick={reset}><GrPowerReset /></button>
+            <p className="timers-btn">
+                <button
+                    onClick={reset}
+                    disabled={!isRunning}>
+                    <GrPowerReset />
+                </button>
                 <button
                     className={isActive ? 'stop' : 'start'}
-                    onClick={isActive ? stopTimer : startTimer}>
+                    onClick={isActive ? stopTimer : startTimer}
+                    disabled={!isRunning}>
                     {isActive ? <IoPause /> : <BiSolidRightArrow />}
                 </button>
-                <button onClick={deleteTimerById}><GrClose /></button>
-            </p>
-            <p className="timer-btn">
+                <button
+                    onClick={deleteTimerById}
+                    disabled={!isRunning}>
+                    <GrClose />
+                </button>
             </p>
         </>
     );

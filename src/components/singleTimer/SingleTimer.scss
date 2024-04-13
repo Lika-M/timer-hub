@@ -11,7 +11,7 @@
         border-radius: 6px;
 
         display: grid;
-        grid-template-rows: 2fr 1fr 1fr 1fr;
+        grid-template-rows: repeat(2, 3fr 1fr);
         align-content: center;
         justify-content: center;
         align-items: center;
@@ -31,17 +31,17 @@
             text-align: center;
 
             progress[value] {
-                --color: linear-gradient(#fff8,#fff0),
-                repeating-linear-gradient(135deg,#0003 0 10px,#0000 0 20px),#519813;
+                --color: linear-gradient(#fff8, #fff0),
+                    repeating-linear-gradient(135deg, #0003 0 10px, #0000 0 20px), #519813;
                 --background: #FFF;
 
                 display: inline-block;
                 height: 8px;
                 border-radius: 10em;
                 background: var(--background);
-                -webkit-appearance:none;
-                -moz-appearance:none;
-                -ms-appearance:none;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
                 appearance: none;
                 border: none;
 
@@ -59,7 +59,7 @@
                     border-radius: 10em;
                     background: var(--color);
                 }
-                
+
             }
         }
 
@@ -71,7 +71,7 @@
             font-size: $fs-mid;
         }
 
-        .timer-btn {
+        .timers-btn {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 1px;
@@ -83,26 +83,27 @@
                 font-size: $fs-smaller;
                 cursor: pointer;
                 width: 50px;
-                padding: 4px;
 
                 @include button($btn-bgr-color-hover, $color-white);
 
-                // &:hover {
-                //     padding: 1px;
-                //     transform: scale(1.1);
-                // }
-
+                svg {
+                    font-size: 16px;
+                    margin-top: 2px;
+                }
                 &.stop {
                     background-color: #B82003;
                 }
 
                 &.start {
-                    background-color:#519813;
+                    background-color: #519813;
+                }
+
+                &[disabled] {
+                    opacity: 0.5;
+                    transform: unset;
                 }
             }
         }
-
-
     }
 }
 
