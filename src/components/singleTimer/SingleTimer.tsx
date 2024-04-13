@@ -1,6 +1,11 @@
+import { BiSolidRightArrow } from "react-icons/bi";
+import { IoPause } from "react-icons/io5";
+import { GrClose, GrPowerReset } from "react-icons/gr";
+
 import { useState, useEffect, useRef } from "react";
 import { type ExtractedData as TimerProps } from "../newTimer/NewTimer";
 import useTimerContext from "../../store/useTimerContext";
+
 import './SingleTimer.scss';
 
 export default function SingleTimer({ id, name, duration }: TimerProps) {
@@ -45,14 +50,10 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
     }
 
     function startTimer() {
-        console.log(isActive)
-        console.log(isRunning)
         setIsActive(true);
     }
 
     function stopTimer() {
-        console.log(isActive)
-        console.log(isRunning)
         setIsActive(false);
     }
 
@@ -66,12 +67,13 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
             <p><progress max={durationInSeconds} value={time} /></p>
             <p>{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</p>
             <p className="timer-btn">
-                <button onClick={reset}>Reset</button>
+                <button onClick={reset}><GrPowerReset /></button>
                 <button
                     className={isActive ? 'stop' : 'start'}
-                    onClick={isActive ? stopTimer : startTimer}>{isActive ? ' Stop' : 'Start'}
+                    onClick={isActive ? stopTimer : startTimer}>
+                    {isActive ? <IoPause /> : <BiSolidRightArrow />}
                 </button>
-                <button onClick={deleteTimerById}>Delete</button>
+                <button onClick={deleteTimerById}><GrClose /></button>
             </p>
             <p className="timer-btn">
             </p>
