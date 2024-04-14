@@ -1,0 +1,17 @@
+@import '../../styles/main.scss';
+
+.form {
+    box-shadow: 25px -3px 17px -19px rgba(0, 0, 0, 0.45);
+    position: relative;
+
+    svg {
+        font-size: 30px;
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translate(-10%, -50%);
+        cursor: pointer;
+    }
+}
+
+// TODO: rotate down the shadow and arrows

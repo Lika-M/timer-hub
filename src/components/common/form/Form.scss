@@ -1,12 +1,13 @@
 @import '../../../styles/main.scss';
 
 .add-form {
-   padding: 40px 10px;
-   display: flex;
-   flex-direction: column;
+   display: grid;
+   grid-template-columns: 1fr;
+   grid-template-rows: 1fr;
+   padding: 90px 60px;
 
-   .button {
-      margin-top: 20px;
+   button {
+      margin-top: 10px;
    }
 }
 

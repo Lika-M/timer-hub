@@ -3,6 +3,9 @@
 * {
   box-sizing: border-box;
 }
+h1, article {
+  margin: 0;
+}
 
 body {
   margin: 0;
@@ -12,12 +15,12 @@ body {
   min-height: 100vh;
   font-family: 'Quicksand', sans-serif;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 #root {
-  width: 60rem;
+  max-width: 60rem;
   margin: 50px auto;
-  padding: 2rem;
   background: $color-dashboard;
   border-radius: 8px;
   box-shadow: $box-shadow;
@@ -25,16 +28,18 @@ body {
 }
 
 main {
+  min-height: 80vh;
   display: grid;
   grid-template-columns: 2fr 3fr;
-  grid-gap: 2em;
 }
 
 @media screen and (max-width: 1000px) {
-  main {
-    grid-template-columns: repeat(2, 1fr);
+  #root {
+    margin: 30px 20px;
   }
 }
+
+//TODO sections responsive
 
 @media screen and (max-width: 800px) {
   main {

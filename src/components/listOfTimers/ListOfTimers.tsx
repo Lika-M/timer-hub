@@ -7,7 +7,7 @@ export default function ListOfTimers() {
   const ctx = useTimerContext();
 
   return (
-    <article>
+    <article className="timers">
       {ctx.timers.length
         ?
         <section className='timers-wrapper'>
