@@ -2,7 +2,24 @@
 
 .form {
     box-shadow: 25px -3px 17px -19px rgba(0, 0, 0, 0.45);
-    position: relative;
+    position:relative;
+    top: 0;
+    left: 0;
+    transition: left 0.8s cubic-bezier(1, 0, 0, 1);
+
+    .add-form {
+        visibility: visible;
+        transition: visibility  0.3s linear 0.5s;
+    }
+
+    &.collapsed {
+        left: -340px;
+
+        .add-form {
+            visibility: hidden;
+            transition: visibility  0.3s linear ;
+        }
+    }
 
     svg {
         font-size: 30px;

@@ -8,7 +8,7 @@ import './App.scss';
 
 function App() {
 
-  const [isFormCollapsed, setIsFormCollapsed] = useState<boolean>(true);
+  const [isFormCollapsed, setIsFormCollapsed] = useState<boolean>(false);
 
   function toggleForm(): void {
     if (isFormCollapsed) {
