@@ -3,7 +3,9 @@
 * {
   box-sizing: border-box;
 }
-h1, article {
+
+h1,
+article {
   margin: 0;
 }
 
@@ -27,11 +29,16 @@ body {
   color: $color-white;
 }
 
-main {
+.main {
   min-height: 80vh;
   display: grid;
   grid-template-columns: 2fr 3fr;
+  transition: grid-template-columns 0.8s;
   position: relative;
+
+  &.expanded {
+    grid-template-columns: 45px 950px;
+  }
 }
 
 @media screen and (max-width: 1000px) {

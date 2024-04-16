@@ -21,12 +21,12 @@ function App() {
   return (
     <TimersContextProvider>
       <Header />
-      <main>
+      <main className={!isFormCollapsed ? 'main': 'main expanded'}>
         <NewTimer
           toggleForm={toggleForm}
           isCollapsed={isFormCollapsed}
         />
-        <ListOfTimers />
+        <ListOfTimers isExpanded={isFormCollapsed}/>
       </main>
     </TimersContextProvider>
   )

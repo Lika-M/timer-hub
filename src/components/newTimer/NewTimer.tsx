@@ -55,9 +55,9 @@ export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
     }
 
     return (
-        <article className={!isCollapsed ? "form" : "form collapsed"}>
+        <article className={isCollapsed ? "form collapsed" : "form expanded"}>
             <span onClick={toggleForm}>
-                {!isCollapsed
+                {isCollapsed
                     ? <MdKeyboardArrowRight />
                     : <MdKeyboardArrowLeft />}
             </span>

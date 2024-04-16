@@ -2,22 +2,22 @@
 
 .form {
     box-shadow: 25px -3px 17px -19px rgba(0, 0, 0, 0.45);
-    position:relative;
-    top: 0;
-    left: 0;
-    transition: left 0.8s cubic-bezier(1, 0, 0, 1);
+    position: relative;
 
-    .add-form {
-        visibility: visible;
-        transition: visibility  0.3s linear 0.5s;
+    &.expanded {
+        .add-form {
+            visibility: visible;
+            opacity: 1;
+            transition: visibility 0.1s linear 0.3s;
+            transition: opacity 0.5s linear 0.3s;
+        }
     }
 
     &.collapsed {
-        left: -340px;
-
+    
         .add-form {
             visibility: hidden;
-            transition: visibility  0.3s linear ;
+            opacity: 0;
         }
     }
 
@@ -26,7 +26,7 @@
         position: absolute;
         top: 50%;
         right: 0;
-        transform: translate(-10%, -50%);
+        transform: translate(-2%, -50%);
         cursor: pointer;
     }
 }

@@ -3,15 +3,19 @@ import SingleTimer from '../singleTimer/SingleTimer.tsx';
 import Button from '../common/button/Button.tsx';
 import './ListOfTimers.scss';
 
-export default function ListOfTimers() {
+type ListOfTimersProps = {
+  isExpanded: boolean;
+}
+
+export default function ListOfTimers({ isExpanded }: ListOfTimersProps) {
   const ctx = useTimerContext();
 
   return (
     <article className="timers">
       {ctx.timers.length
         ?
-        <section className='timers-wrapper'>
-          <ul className="timers-list">
+        <section className={isExpanded ? "timers-wrapper expanded" : "timers-wrapper"}>
+          <ul className="timers-list" >
             {ctx.timers.map(t => {
               return (<li key={t.id}>
                 <SingleTimer {...t} />

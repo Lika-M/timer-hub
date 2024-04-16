@@ -1,24 +1,35 @@
 @import '../../styles/main.scss';
 
-.timers {
-    margin: 40px 30px;
+.main {
+    width: auto;
+    .timers {
+        margin: 40px 30px;
+    }
+    
+    &.expanded {
+        width:100%;
+    }
 }
 
-.timers-list {
-    font-family: $font-second;
-    background-color: $btn-bgr-color;
-    list-style: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-    grid-gap: 1em;
-    border: 2px solid $color-white;
-    border-radius: 6px;
-    padding: 20px;
-    margin: 0;
+.timers-wrapper {
+    position: relative;
+    left: 0;
+    transition: left 0.5s linear;
+
+    .timers-list {
+        @include timers-list;
+        grid-template-columns: repeat(2, 1fr);
+        transition: grid-template-columns 0.8s linear 0.3s;
+    }
+}
+
+.timers-wrapper.expanded {
+    left: -2%;
+
+    .timers-list {
+        @include timers-list;
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
 
 .timers-buttons {
