@@ -18,6 +18,10 @@
         padding: 10px;
         margin: auto;
 
+        position: relative;
+        left: 100px;
+        opacity: 0;
+        animation: add-timer 0.5s linear 0.2s forwards;
 
         h2 {
             @include header($fs-mid);
@@ -90,6 +94,7 @@
                     font-size: 16px;
                     margin-top: 2px;
                 }
+
                 &.stop {
                     background-color: #B82003;
                 }
@@ -104,6 +109,26 @@
                 }
             }
         }
+    }
+}
+
+@keyframes add-timer {
+    0% {
+        left: 100px;
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    60% {
+        left: 60px;
+    }
+
+    100% {
+        left: 0;
+        opacity: 1;
     }
 }
 

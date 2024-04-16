@@ -20,6 +20,7 @@
         @include timers-list;
         grid-template-columns: repeat(2, 1fr);
         transition: grid-template-columns 0.8s linear 0.3s;
+        position: relative;
     }
 }
 

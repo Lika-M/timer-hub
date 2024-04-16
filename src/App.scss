@@ -33,7 +33,7 @@ body {
   min-height: 80vh;
   display: grid;
   grid-template-columns: 2fr 3fr;
-  transition: grid-template-columns 0.8s;
+  transition: grid-template-columns 0.8s ease-in-out;
   position: relative;
 
   &.expanded {
