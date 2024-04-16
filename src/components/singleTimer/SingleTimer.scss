@@ -96,11 +96,17 @@
                 }
 
                 &.stop {
-                    background-color: #B82003;
+                    background-color: $btn-bgr-red-color;
+                    &:hover {
+                        background-color: $btn-bgr-red-color-hover;
+                    }
                 }
 
                 &.start {
-                    background-color: #519813;
+                    background-color:$btn-bgr-green-color;
+                    &:hover {
+                        background-color:$btn-bgr-green-color-hover;
+                    }
                 }
 
                 &[disabled] {
