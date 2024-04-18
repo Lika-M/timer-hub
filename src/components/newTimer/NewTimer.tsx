@@ -63,7 +63,7 @@ export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
                         : <MdKeyboardArrowLeft />}
                 </span>
                 <Form onSave={handleSubmit}>
-                    <img src="/src/assets/multi-timer.png" alt="Multi-timer" />
+                    <img src="/assets/multi-timer.png" alt="Multi-timer" />
                     <Input
                         type="text"
                         id="name"

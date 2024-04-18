@@ -34,7 +34,7 @@ export default function ListOfTimers({ isExpanded }: ListOfTimersProps) {
         :
         <section className="no-timers">
           <h2>No timers yet!</h2>
-          <img src="/src/assets/timer.png" alt="Timer" />
+          <img src="/assets/timer.png" alt="Timer" />
         </section>}
     </article>
   );
