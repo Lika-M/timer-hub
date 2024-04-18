@@ -11,13 +11,20 @@
             transition: visibility 0.1s linear 0.3s;
             transition: opacity 0.5s linear 0.3s;
         }
+
+        img {
+            opacity: 1;
+        }
     }
 
     &.collapsed {
-    
         .add-form {
             visibility: hidden;
             opacity: 0;
+            
+        }
+        img {
+          opacity: 0;
         }
     }
 
@@ -29,6 +36,19 @@
         transform: translate(-2%, -50%);
         cursor: pointer;
     }
+
+    img {
+        width: 180px;
+        height: auto;
+        position: absolute;
+        left: 50%;
+        top: 20%;
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        transition: opacity 0.5s linear 0.3s;
+        opacity: 1;
+    }
+
 }
 
 // TODO: rotate down the shadow and arrows

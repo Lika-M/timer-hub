@@ -55,29 +55,32 @@ export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
     }
 
     return (
-        <article className={isCollapsed ? "form collapsed" : "form expanded"}>
-            <span onClick={toggleForm}>
-                {isCollapsed
-                    ? <MdKeyboardArrowRight />
-                    : <MdKeyboardArrowLeft />}
-            </span>
-            <Form onSave={handleSubmit}>
-                <Input
-                    type="text"
-                    id="name"
-                    label="Name"
-                    placeholder={placeholder.name}
-                    onBlur={() => setPlaceholder(initPlaceholder)}
-                />
-                <Input
-                    type="text"
-                    id="duration"
-                    label="Duration"
-                    placeholder={placeholder.duration}
-                    onBlur={() => setPlaceholder(initPlaceholder)}
-                />
-                <Button>Add New Timer</Button>
-            </Form>
-        </article>
+        <>
+            <article className={isCollapsed ? "form collapsed" : "form expanded"}>
+                <span onClick={toggleForm}>
+                    {isCollapsed
+                        ? <MdKeyboardArrowRight />
+                        : <MdKeyboardArrowLeft />}
+                </span>
+                <Form onSave={handleSubmit}>
+                    <img src="/src/assets/multi-timer.png" alt="Multi-timer" />
+                    <Input
+                        type="text"
+                        id="name"
+                        label="Name"
+                        placeholder={placeholder.name}
+                        onBlur={() => setPlaceholder(initPlaceholder)}
+                    />
+                    <Input
+                        type="text"
+                        id="duration"
+                        label="Duration"
+                        placeholder={placeholder.duration}
+                        onBlur={() => setPlaceholder(initPlaceholder)}
+                    />
+                    <Button>Add New Timer</Button>
+                </Form>
+            </article>
+        </>
     );
 }
