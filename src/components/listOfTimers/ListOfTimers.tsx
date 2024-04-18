@@ -32,8 +32,9 @@ export default function ListOfTimers({ isExpanded }: ListOfTimersProps) {
           </aside>
         </section>
         :
-        <section>
-          <h2 className="no-timers">No timers yet!</h2>
+        <section className="no-timers">
+          <h2>No timers yet!</h2>
+          <img src="/src/assets/timer.png" alt="Timer" />
         </section>}
     </article>
   );

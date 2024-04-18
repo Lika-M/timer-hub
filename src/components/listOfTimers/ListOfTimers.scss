@@ -46,7 +46,10 @@
 }
 
 .no-timers {
-    @include header(2em)
+    @include header(1.2em);
+    h2 {
+        margin:0;
+    }
 }
 
 @media screen and (max-width: 1000px) {
