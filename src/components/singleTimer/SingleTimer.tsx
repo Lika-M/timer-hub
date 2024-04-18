@@ -64,9 +64,11 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
     return (
         <>
             <h2>{time ? `${name}` : `${name} finished`}</h2>
-            <p><progress max={durationInSeconds} value={time} /></p>
             <p>{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</p>
-            <p className="timers-btn">
+            <div className="progress-container">
+                <progress max={durationInSeconds} value={time} />
+            </div>
+            <div className="button-container">
                 <button
                     onClick={reset}
                     disabled={!isRunning}>
@@ -83,7 +85,7 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
                     disabled={!isRunning}>
                     <GrClose />
                 </button>
-            </p>
+            </div>
         </>
     );
 }

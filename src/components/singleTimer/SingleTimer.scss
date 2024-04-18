@@ -1,81 +1,35 @@
 @import '../../styles/main.scss';
 
 .timers-wrapper {
-
     li {
-        width: 200px;
-        height: 150px;
-        background: $color-bgr-timer;
-        color: $color-mid-blue;
-        box-shadow: $box-shadow;
-        border-radius: 6px;
+        @include list-item;
 
-        display: grid;
-        grid-template-rows: repeat(2, 3fr 1fr);
-        align-content: center;
-        justify-content: center;
-        align-items: center;
-        padding: 10px;
-        margin: auto;
-
-        position: relative;
-        left: 100px;
-        opacity: 0;
-        animation: add-timer 0.5s linear 0.2s forwards;
+        color: $color-card-yellow;
+        border: 6px solid $color-card-yellow;
 
         h2 {
-            @include header($fs-mid);
+            @include header($fs-small);
             font-family: $font-first;
         }
 
         p {
             font-size: $fs-small;
+            font-size: $fs-mid;
             color: $color-white;
             margin: 0;
             text-align: center;
+        }
 
+        .progress-container {
+            font-size: $fs-small;
+            align-self: flex-start;
+        
             progress[value] {
-                --color: linear-gradient(#fff8, #fff0),
-                    repeating-linear-gradient(135deg, #0003 0 10px, #0000 0 20px), #519813;
-                --background: #FFF;
-
-                display: inline-block;
-                height: 8px;
-                border-radius: 10em;
-                background: var(--background);
-                -webkit-appearance: none;
-                -moz-appearance: none;
-                -ms-appearance: none;
-                appearance: none;
-                border: none;
-
-                &::-webkit-progress-bar {
-                    border-radius: 10em;
-                    background: var(--background);
-                }
-
-                &::-webkit-progress-value {
-                    border-radius: 10em;
-                    background: var(--color);
-                }
-
-                &::-moz-progress-bar {
-                    border-radius: 10em;
-                    background: var(--color);
-                }
-
+                @include progress-bar ();
             }
         }
-
-        p:nth-child(2) {
-            font-size: $fs-small;
-        }
-
-        p:nth-child(3) {
-            font-size: $fs-mid;
-        }
-
-        .timers-btn {
+        
+        .button-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             grid-gap: 1px;
@@ -97,15 +51,17 @@
 
                 &.stop {
                     background-color: $btn-bgr-red-color;
+
                     &:hover {
                         background-color: $btn-bgr-red-color-hover;
                     }
                 }
 
                 &.start {
-                    background-color:$btn-bgr-green-color;
+                    background-color: $btn-bgr-green-color;
+
                     &:hover {
-                        background-color:$btn-bgr-green-color-hover;
+                        background-color: $btn-bgr-green-color-hover;
                     }
                 }
 
@@ -115,6 +71,21 @@
                 }
             }
         }
+    }
+
+    li:nth-child(4n+2) {
+        color: $color-card-magenta;
+        border: 6px solid $color-card-magenta;
+    }
+
+    li:nth-child(4n+3) {
+        color: $color-card-blue;
+        border: 6px solid $color-card-blue;
+    }
+
+    li:nth-child(4n+4) {
+        color: $color-card-green;
+        border: 6px solid $color-card-green;
     }
 }
 
