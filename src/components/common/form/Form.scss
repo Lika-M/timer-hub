@@ -11,22 +11,21 @@
    }
 }
 
+@media screen and (max-width: 1000px){
+   .add-form {
+      padding: 200px 40px 100px 40px;
+   }
+}
+
 @media screen and (max-width: 800px) {
    .add-form {
-      width: 60%;
-      margin: 0 auto;
-      padding: 20px;
+      padding: 40px;
+      margin: 0 40px;
    }
 }
 
 @media screen and (max-width: 600px) {
    .add-form {
       width: 80%;
-   }
-}
-
-@media screen and (max-width: 500px) {
-   .add-form {
-      padding: 0;
    }
 }

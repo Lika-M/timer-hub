@@ -22,7 +22,7 @@ body {
 
 #root {
   max-width: 60rem;
-  margin: 50px auto;
+  margin: 6% 5%;
   background: $color-dashboard;
   border-radius: 8px;
   box-shadow: $box-shadow;
@@ -34,34 +34,65 @@ body {
   display: grid;
   grid-template-columns: 2fr 3fr;
   transition: grid-template-columns 0.5s linear;
+  justify-content: space-around;
   position: relative;
 
   &.expanded {
-    grid-template-columns: 45px 950px;
+    grid-template-columns: 45px 900px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  #root {
+    margin: 4% 3%;
+  }
+
+  .main {
+    &.expanded {
+      grid-template-columns: 45px 850px;
+    }
   }
 }
 
 @media screen and (max-width: 1000px) {
-  #root {
-    margin: 30px 20px;
+  .main {
+    &.expanded {
+      grid-template-columns: 45px 750px;
+      grid-gap: 0.9em;
+    }
   }
 }
 
-//TODO sections responsive
+@media screen and (max-width: 900px) {
+  .main {
+    &.expanded {
+      grid-template-columns: 45px 700px;
+      grid-gap: 0.8em;
+    }
+  }
+}
 
 @media screen and (max-width: 800px) {
-  main {
+  .main,
+  .main.expanded {
+    width: 100%;
     grid-template-columns: 1fr;
+    grid-gap: 0.6em;
+  }
+
+  #root {
+    margin: 5%;
   }
 }
 
 @media screen and (max-width: 600px) {
-  body {
-    background: $color-dashboard;
+  .main,
+  .main.expanded {
+    grid-template-columns: 1fr;
+    margin: 0 auto;
   }
 
   #root {
-    padding: 0;
-    width: 90%;
+    margin: 0;
   }
 }

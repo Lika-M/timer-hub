@@ -21,10 +21,10 @@
         .add-form {
             visibility: hidden;
             opacity: 0;
-            
         }
+
         img {
-          opacity: 0;
+            opacity: 0;
         }
     }
 
@@ -48,7 +48,64 @@
         transition: opacity 0.5s linear 0.3s;
         opacity: 1;
     }
-
 }
 
-// TODO: rotate down the shadow and arrows
+@media screen and (max-width: 800px) {
+    .form {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+
+        &.expanded {
+            .add-form {
+                width: 90%;
+                margin: 0 auto;
+
+                img {
+                    width: 25%;
+                    visibility: visible;
+                    opacity: 1;
+                    top: 40%;
+                    left: 20%;
+                }
+            }
+        }
+
+        svg {
+            display: none;
+        }
+
+        &.collapsed .add-form {
+            grid-template-columns: 1fr;
+            width: 100%;
+            margin: 0 auto;
+            padding: 8% 18%;
+            visibility: visible;
+            opacity: 1;
+
+            img {
+                opacity: 1;
+                top: 40%;
+                left: 20%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form {
+        grid-template-columns: 1fr;
+
+        &.expanded,
+        &.collapsed {
+            .add-form {
+                width: 100%;
+                padding: 10% 15%;
+
+                img {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}

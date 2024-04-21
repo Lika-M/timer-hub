@@ -2,12 +2,9 @@
 
 .main {
     width: auto;
+
     .timers {
-        margin: 40px 30px;
-    }
-    
-    &.expanded {
-        width:100%;
+        position: relative;
     }
 }
 
@@ -15,6 +12,7 @@
     position: relative;
     left: 0;
     transition: left 0.5s linear;
+    padding: 30px 40px;
 
     .timers-list {
         @include timers-list;
@@ -25,7 +23,10 @@
 }
 
 .timers-wrapper.expanded {
-    left: -2%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 5% 1%;
 
     .timers-list {
         @include timers-list;
@@ -47,25 +48,87 @@
 
 .no-timers {
     @include header(1.2em);
+
     h2 {
         font-size: $fs-small;
-        margin:0;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .timers-wrapper.expanded {
+        .timers-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
     }
 }
 
 @media screen and (max-width: 1000px) {
-    .timers-wrapper {
-        margin: 0 auto;
-    }
-
-    .timers-list {
-        grid-template-columns: 1fr;
-        justify-items: center;
+    .timers-wrapper.expanded {
+        .timers-list {
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 0.8em;
+            padding: 10px;
+        }
     }
 }
 
 @media screen and (max-width: 800px) {
-    .timers-list {
-        grid-template-columns: repeat(3, 1fr);
+    .main {
+        width: auto;
+
+        .timers {
+            position: relative;
+            margin: 0 auto;
+
+            .timers-wrapper {
+                padding: 0;
+            }
+
+            .timers-wrapper.expanded {
+                margin: 0;
+                left: 50%;
+            }
+        }
+    }
+
+    .timers-wrapper,
+    .timers-wrapper.expanded {
+
+        .timers-list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .no-timers {
+        img {
+            width: 60%;
+        }
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .timers-wrapper.expanded,
+    .timers-wrapper {
+        .timers-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .no-timers {
+        img {
+            width: 80%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .timers-wrapper,
+    .timers-wrapper.expanded {
+        .timers-list {
+            grid-template-columns: 1fr;
+        }
     }
 }
