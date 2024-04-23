@@ -2,13 +2,12 @@
 
 .header {
     box-shadow: 0 8px 5px -5px rgba(0, 0, 0, 0.45);
-    min-height: 80px;
+    min-height: 15vh;
     display: flex;
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding-inline: 3%;
-    height: 15vh;
+    padding-inline: 5%;
 
     h2 {
         transform: translateX(600px);
@@ -80,6 +79,7 @@
 
         h2 {
             font-size: 1.2em;
+            line-height: 1.2;
         }
     }
 }
