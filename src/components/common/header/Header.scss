@@ -8,11 +8,13 @@
     align-items: center;
     overflow: hidden;
     padding-inline: 3%;
+    height: 15vh;
 
     h2 {
         transform: translateX(600px);
         animation: bounceRight 2s linear 1s both;
         text-transform: uppercase;
+        text-align: center;
 
         span:nth-child(1) {
             color: $color-card-magenta;
@@ -69,5 +71,15 @@
     100% {
         transform: translateX(0);
         animation-timing-function: ease-out;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header {
+        min-height: 8vh;
+
+        h2 {
+            font-size: 1.2em;
+        }
     }
 }

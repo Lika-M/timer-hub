@@ -48,6 +48,7 @@
 
 .no-timers {
     @include header(1.2em);
+    margin-top: 10%;
 
     h2 {
         font-size: $fs-small;
@@ -73,13 +74,13 @@
     }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
     .main {
         width: auto;
 
         .timers {
             position: relative;
-            margin: 0 auto;
+            margin: 6% auto;
 
             .timers-wrapper {
                 padding: 0;
@@ -99,15 +100,10 @@
             grid-template-columns: repeat(3, 1fr);
         }
     }
-
-    .no-timers {
-        img {
-            width: 60%;
-        }
-    }
 }
 
 @media screen and (max-width: 750px) {
+
     .timers-wrapper.expanded,
     .timers-wrapper {
         .timers-list {
@@ -125,10 +121,12 @@
 }
 
 @media screen and (max-width: 500px) {
+
     .timers-wrapper,
     .timers-wrapper.expanded {
         .timers-list {
             grid-template-columns: 1fr;
+            padding-inline: 50px;
         }
     }
 }

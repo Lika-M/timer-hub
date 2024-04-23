@@ -64,7 +64,7 @@ export default function SingleTimer({ id, name, duration }: TimerProps) {
     return (
         <>
             <h2>{time ? `${name}` : `${name} finished`}</h2>
-            <p>{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</p>
+            <p translate="no">{`${remainingHours}:${remainingMinutes}:${remainingSeconds}`}</p>
             <div className="progress-container">
                 <progress max={durationInSeconds} value={time} />
             </div>

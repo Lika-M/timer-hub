@@ -22,12 +22,12 @@
         .progress-container {
             font-size: $fs-small;
             align-self: flex-start;
-        
+
             progress[value] {
                 @include progress-bar ();
             }
         }
-        
+
         .button-container {
             display: grid;
             grid-template-columns: repeat(3, 1fr);

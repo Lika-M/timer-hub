@@ -67,14 +67,14 @@ export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
                     <Input
                         type="text"
                         id="name"
-                        label="Name"
+                        label="Timer Name"
                         placeholder={placeholder.name}
                         onBlur={() => setPlaceholder(initPlaceholder)}
                     />
                     <Input
                         type="text"
                         id="duration"
-                        label="Duration"
+                        label="Timer Duration"
                         placeholder={placeholder.duration}
                         onBlur={() => setPlaceholder(initPlaceholder)}
                     />

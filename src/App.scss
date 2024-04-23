@@ -12,25 +12,29 @@ article {
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
   background: $color-bgr;
-  min-height: 100vh;
-  font-family: 'Quicksand', sans-serif;
-  min-height: 100vh;
-  overflow: auto;
 }
 
 #root {
+  font-family: 'Quicksand', sans-serif;
+  overflow: hidden;
+  position: relative;
+  min-height: 92vh;
+}
+
+.container {
   max-width: 60rem;
-  margin: 6% 5%;
+  margin: 3% auto;
   background: $color-dashboard;
+  color: $color-white;
   border-radius: 8px;
   box-shadow: $box-shadow;
-  color: $color-white;
+  position: relative;
+  top: 20%;
 }
 
 .main {
-  min-height: 80vh;
+  min-height: 85vh;
   display: grid;
   grid-template-columns: 2fr 3fr;
   transition: grid-template-columns 0.5s linear;
@@ -43,10 +47,6 @@ body {
 }
 
 @media screen and (max-width: 1200px) {
-  #root {
-    margin: 4% 3%;
-  }
-
   .main {
     &.expanded {
       grid-template-columns: 45px 850px;
@@ -55,6 +55,10 @@ body {
 }
 
 @media screen and (max-width: 1000px) {
+  .container {
+    margin-inline: 3%;
+  }
+
   .main {
     &.expanded {
       grid-template-columns: 45px 750px;
@@ -62,6 +66,7 @@ body {
     }
   }
 }
+
 
 @media screen and (max-width: 900px) {
   .main {
@@ -72,27 +77,30 @@ body {
   }
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 860px) {
+
   .main,
   .main.expanded {
     width: 100%;
     grid-template-columns: 1fr;
     grid-gap: 0.6em;
   }
-
-  #root {
-    margin: 5%;
-  }
 }
 
 @media screen and (max-width: 600px) {
+  .container {
+    height: 100vh;
+    margin: 0;
+    border-radius: unset;
+  }
+
   .main,
   .main.expanded {
     grid-template-columns: 1fr;
-    margin: 0 auto;
   }
 
-  #root {
+  .main {
+    min-height: 92vh;
     margin: 0;
   }
 }
