@@ -5,28 +5,29 @@
 
     .timers {
         position: relative;
+        overflow: hidden;
     }
 }
 
 .timers-wrapper {
     position: relative;
     left: 0;
-    transition: left 0.5s linear;
+    transition: left 0.5s ease-out;
     padding: 30px 40px;
 
     .timers-list {
         @include timers-list;
         grid-template-columns: repeat(2, 1fr);
-        transition: grid-template-columns 0.5s linear 0.3s;
+        transition: grid-template-columns 0.1s linear 0.3s;
         position: relative;
     }
 }
 
 .timers-wrapper.expanded {
     position: relative;
-    left: 50%;
-    transform: translate(-50%);
-    padding: 5% 1%;
+    left: -50%;
+    transform: translate(50%);
+    padding: 4% 1%;
 
     .timers-list {
         @include timers-list;
@@ -67,7 +68,7 @@
 @media screen and (max-width: 1000px) {
     .timers-wrapper.expanded {
         .timers-list {
-            grid-template-columns: repeat(3, 1fr);
+            // grid-template-columns: repeat(3, 1fr);
             grid-gap: 0.8em;
             padding: 10px;
         }
