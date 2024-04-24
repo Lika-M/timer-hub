@@ -3,22 +3,23 @@
 .add-form {
    display: grid;
    grid-template-columns: 1fr;
-   grid-template-rows: 1fr;
-   padding: 200px 60px 100px 60px;
+   grid-template-rows: 2.5fr 1fr 1fr 1fr;
+   padding: 40px 60px 100px 60px;
 
    button {
-      margin-top: 10px;
+      margin-top: 20px;
    }
 }
 
 @media screen and (max-width: 1000px) {
    .add-form {
-      padding: 200px 40px 100px 40px;
+      padding: 40px 40px 100px 40px;
    }
 }
 
 @media screen and (max-width: 860px) {
    .add-form {
+      grid-template-rows: 1fr;
       padding: 40px;
       margin: 0 40px;
    }
