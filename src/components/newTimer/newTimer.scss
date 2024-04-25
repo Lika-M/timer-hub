@@ -52,13 +52,15 @@
     .form {
         width: 90%;
         display: grid;
-        grid-template-columns: 1fr 2fr;
+        grid-template-columns: 1fr 2.5fr;
         margin: 0 auto;
         box-shadow: unset;
 
         &.expanded,
         &.collapsed {
             .add-form {
+                min-width: 250px;
+                max-height: 250px;
                 width: 80%;
                 margin: 0 auto;
                 visibility: visible;
@@ -68,7 +70,7 @@
                     width: 30%;
                     position: absolute;
                     top: 45%;
-                    left: 25%;
+                    left: 22%;
                     -ms-transform: translate(-50%, -50%);
                     transform: translate(-50%, -50%);
                     transition: opacity 0.5s linear 0.3s;
@@ -93,15 +95,20 @@
 @media screen and (max-width: 500px) {
     .form {
         grid-template-columns: 1fr;
+
         &.expanded,
         &.collapsed {
+            span {
+                display: none;
+            }
 
             .add-form {
                 width: 100%;
-                padding: 10% 15%;
-    
+                height: 100%;
+                padding: 10% 15% 5% 15%;
+
                 img {
-                    visibility: hidden;
+                    display: none;
                 }
             }
         }

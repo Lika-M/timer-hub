@@ -5,7 +5,7 @@
 
     .timers {
         position: relative;
-        overflow: hidden;
+        margin: 35px auto;
     }
 }
 
@@ -13,7 +13,6 @@
     position: relative;
     left: 0;
     transition: left 0.5s ease-out;
-    padding: 25px 40px;
 
     .timers-list {
         @include timers-list;
@@ -49,7 +48,6 @@
 
 .no-timers {
     @include header(1.2em);
-    margin-top: 10%;
 
     h2 {
         font-size: $fs-small;
@@ -68,9 +66,6 @@
 }
 
 @media screen and (max-width: 1000px) {
-    .timers-wrapper {
-        padding-inline: 15px;
-    }
 
     .timers-wrapper.expanded {
         margin-inline: 15px;
@@ -84,10 +79,8 @@
 @media screen and (max-width: 860px) {
     .main {
         width: auto;
-
         .timers {
-            position: relative;
-            margin: 6% auto;
+            margin: 35px auto;
         }
     }
 
@@ -113,9 +106,13 @@
 }
 
 @media screen and (max-width: 600px) {
+    .main .timers {
+        margin: 0 auto;
+    }
+
     .no-timers {
         img {
-            width: 80%;
+            width: 75%;
         }
     }
 }
