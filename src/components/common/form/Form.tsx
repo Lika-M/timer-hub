@@ -18,7 +18,7 @@ export default function Form({ children, onSave, ...rest }: FormProps) {
     }
 
     return (
-        <form onSubmit={onSubmit} {...rest} className="add-form">
+        <form onSubmit={onSubmit} {...rest}>
             {children}
         </form>
     );

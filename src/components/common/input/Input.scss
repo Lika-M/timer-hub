@@ -1,10 +1,12 @@
 @import '../../../styles/main.scss';
 
-.add-form__input {
+.add-form .add-form__input {
+    font-size: 1.2rem;
+
     label {
         display: block;
-        font-size: 0.85rem;
-        color:$inp-label-color;
+        font-size: $fs-smaller;
+        color: $inp-label-color;
         font-weight: bold;
         text-transform: uppercase;
         margin-bottom: 0.35rem;
@@ -19,7 +21,18 @@
         border: 1px solid $inp-border-color;
         background-color: $inp-bgr-color;
         margin-bottom: 1rem;
-        font-size: 1rem;
-        color: #07302a;
+        color: $inp-border-color;
+    }
+}
+
+.add-form.error .add-form__input {
+    input::placeholder {
+        color: $color-card-magenta;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .add-form .add-form__input {
+        font-size: $fs-small;
     }
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, ChangeEvent, FocusEvent } from "react";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 
 import useTimerContext from "../../store/useTimerContext";
@@ -24,8 +24,36 @@ type NewTimerProps = {
 export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
 
     const { addTimer } = useTimerContext();
-    const initPlaceholder = { name: 'Yoga', duration: 'hh/mm/ss' }
+    const initPlaceholder = { name: 'Yoga', duration: 'hh/mm/ss' };
+    const [enteredInput, setEnteredInput] = useState<Placeholder>({ name: '', duration: '' });
     const [placeholder, setPlaceholder] = useState<Placeholder>(initPlaceholder);
+    const [error, setError] = useState(false);
+
+    function handleChange(ev: ChangeEvent<HTMLInputElement>) {
+        const { name, value } = ev.target;
+        let newValue = value;
+
+        if (name === "duration" && value.length > enteredInput.duration.length) {
+            if (value.length === 2 || value.length === 5) {
+                newValue = value + '/';
+            }
+        }
+
+        setEnteredInput(state => ({
+            ...state,
+            [name]: newValue
+        }));
+    }
+
+    function handleFocus(ev: FocusEvent<HTMLInputElement>) {
+        const { name } = ev.target;
+        setEnteredInput(state => ({
+            ...state,
+            [name]: ''
+        }));
+        setError(false);
+        setPlaceholder(initPlaceholder);
+    }
 
     function handleSubmit(data: unknown) {
         const extractedData = data as ExtractedData;
@@ -35,19 +63,24 @@ export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
 
         if (canAdd) {
             addTimer({ id: id, name: extractedData.name, duration: extractedData.duration });
+            setEnteredInput({ name: '', duration: '' });
+            setError(false);
         } else {
-
+            setError(true);
             let newName = placeholder.name;
             let newDuration = placeholder.duration;
 
             if (extractedData.name === '') {
                 newName = 'Enter the Name';
+                setEnteredInput({ name: '', duration: enteredInput.duration });
             }
             if (!isValidDurationFormat) {
-                newDuration = 'Invalid format'
+                newDuration = 'Invalid format';
+                setEnteredInput({ name: enteredInput.name, duration: '' });
             }
             if (extractedData.duration === '') {
                 newDuration = 'Enter the Duration';
+                setEnteredInput({ name: enteredInput.name, duration: '' });
             }
 
             setPlaceholder({ name: newName, duration: newDuration });
@@ -62,7 +95,7 @@ export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
                         ? <MdKeyboardArrowRight />
                         : <MdKeyboardArrowLeft />}
                 </span>
-                <Form onSave={handleSubmit}>
+                <Form onSave={handleSubmit} className={!error ? "add-form" : "add-form error"}>
                     <img src="/assets/multi-timer.png" alt="Multi-timer" />
                     <Input
                         type="text"
@@ -70,6 +103,9 @@ export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
                         label="Timer Name"
                         placeholder={placeholder.name}
                         onBlur={() => setPlaceholder(initPlaceholder)}
+                        onFocus={handleFocus}
+                        onChange={handleChange}
+                        value={enteredInput.name}
                     />
                     <Input
                         type="text"
@@ -77,6 +113,9 @@ export default function NewTimer({ toggleForm, isCollapsed }: NewTimerProps) {
                         label="Timer Duration"
                         placeholder={placeholder.duration}
                         onBlur={() => setPlaceholder(initPlaceholder)}
+                        onFocus={handleFocus}
+                        onChange={handleChange}
+                        value={enteredInput.duration}
                     />
                     <Button>Add New Timer</Button>
                 </Form>
