@@ -1,33 +1,29 @@
-## Project in Development
+## About The Project
 
-This project is built with React, TypeScript, Vite, and SASS. It is still in active development and may contain unfinished or experimental features.
+This project aims to create and track multiple timers that can be collectively stopped and started or controlled individually. It is made responsive and adapts seamlessly to different devices. It's built using React and TypeScript, with state management handled via useReducer and the Context API.
 
+### Demo Project Online
+[Click here](https://timer-hub.vercel.app) to view it in the browser.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Technical Description
+
+### Built with
+- **ReactJS**
+- **TypeScript**
+- **HTML**
+- **SASS** 
+- **Vite**
+
+## Deploy and Hosting
+This project is deployed and hosted on [Vercel](https://vercel.com/).
+
+<img src="/public/assets/timer-hub-1.png" width="300">
+<img src="/public/assets/timer-hub-2.png" width="300">
+<img src="/public/assets/timer-hub-3.png" width="300">
+<img src="/public/assets/timer-hub-4.png" width="300">
+
 
 Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
